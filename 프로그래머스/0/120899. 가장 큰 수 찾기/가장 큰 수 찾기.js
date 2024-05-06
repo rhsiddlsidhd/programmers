@@ -1,16 +1,10 @@
 function solution(array) {
-   
-    let maxNum = -Infinity;
-    let maxIndex = -1;
+    
+    const maxValue = Math.max(...array);
+
+  
+    const maxIndex = array.indexOf(maxValue);
 
     
-    array.forEach((num, index) => {
-        if (num > maxNum) {
-            maxNum = num;
-            maxIndex = index;
-        }
-    });
-
-    
-    return [maxNum, maxIndex];
+    return [maxValue, maxIndex];
 }
