@@ -14,7 +14,7 @@ function solution(num_list) {
 
 function calculate(inc){
     const value = inc.reduce((acc,cur)=>{
-           return  acc += String(cur)    
+           return  acc += cur
     },"")
     return value
 }
