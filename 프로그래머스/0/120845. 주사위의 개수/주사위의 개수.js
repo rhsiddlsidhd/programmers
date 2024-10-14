@@ -1,7 +1,6 @@
-function solution(box, n) {
-    const width = Math.floor(box[0] / n);  
-    const height = Math.floor(box[1] / n);  
-    const depth = Math.floor(box[2] / n);  
-    
-    return width * height * depth;
+function solution(box, n) {    
+  return box.reduce((acc,cur)=>{
+       return acc * Math.floor(cur/n)
+   },1)
 }
+ 
