@@ -1,33 +1,21 @@
 function solution(keyinput, board) {
-    const center = [0,0];
-    const x = board.map((v)=>{
-       const r=  (v -1) / 2
-       return r
-    })
-    const result = Number(center[0]) + -1 
-    keyinput.forEach((v,i)=>{    
-        switch(v){
-                case"left":
-                center[0] = Math.max(center[0] + -1, -x[0])
-                break;
-                case"right":
-                center[0] = Math.min(center[0] + 1, x[0])
-                break;
-                case"up":
-                center[1] = Math.min(center[1] + 1, x[1])
-                break;
-                case"down":
-                center[1] = Math.max(center[1] + -1, -x[1])
-                break;
-            default:
-                break;
-        }
-    })
+    var center = [0,0];
+    
+    for(let p of keyinput){
+       switch(p){
+           case "left": if(-center[0] < (board[0]-1)/2 ) center[0]--;
+               break;
+              case "right": if(center[0] < (board[0]-1)/2 ) center[0]++;
+               break; 
+               case "up": if(center[1] < (board[1]-1)/2 ) center[1]++;
+               break;
+               case "down": if(-center[1] < (board[1]-1)/2 ) center[1]--;
+               break;
+           default:   
+       }
+    }
+    
+    
+    
     return center;
 }
-
-
-
-// ' ' ' ' ' ' ' ' '
-
-// ' ' ' ' ' ' ' ' ' ' '
