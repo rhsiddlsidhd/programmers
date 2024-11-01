@@ -1,8 +1,9 @@
 function solution(quiz) {
     var answer = [];
     quiz.forEach((v,_,arr)=>{
-const expression = v.split(" ").slice(0,v.split(" ").indexOf("="));
-const expressionResult = parseInt(v.split(" ").pop()); 
+
+const [expressions, expressionResult] = v.split(' = ');
+const expression = expressions.split(" ")
 let numbers = [];
 let operator ="";
         for(let i = 0; i < expression.length ; i++){
@@ -29,7 +30,7 @@ let operator ="";
                 break; 
                 default:
             }
-        answer.push(result === expressionResult ? "O":"X")
+        answer.push(result === parseInt(expressionResult) ? "O":"X")
     })
     
     return answer;
