@@ -1,12 +1,12 @@
 function solution(phone_book) {
-    const hashTable = new Map();
+    const table = new Map();
     for (const number of phone_book) {
-        hashTable.set(number, true);
+        table.set(number, true);
     }
     for (const number of phone_book) {
         for (let i = 1; i < number.length; i++) {
             const prefix = number.substring(0, i);
-            if (hashTable.has(prefix)) {
+            if (table.has(prefix)) {
                 return false;
             }
         }
