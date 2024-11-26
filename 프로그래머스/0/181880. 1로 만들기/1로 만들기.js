@@ -3,12 +3,9 @@ function solution(num_list) {
   num_list.map((v) => {
     while (v !== 1) {
       answer++;
-      if (v % 2 !== 0) {
-        v = (v - 1) / 2;
-      } else {
-        v = v / 2;
-      }
+    v = v % 2 !==0 ? (v-1)/2 : v / 2
     }
   });
+    
   return answer;
 }
