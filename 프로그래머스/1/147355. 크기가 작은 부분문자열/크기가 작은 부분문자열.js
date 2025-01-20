@@ -4,18 +4,15 @@ function solution(t, p) {
     const type = p.length;
     const result= [];
     
-    for(let i =0; i<copy.length; i++){  
+    for(let i =0; i<copy.length-type+1; i++){  
         const index = type +i;
-        result.push(copy.slice(i,index).join(""))
+        const n =copy.slice(i,index).join("");
+        if(n <= p) answer++
     }
         
-    result.forEach((v)=>{
 
-        if(v.length === type && Number(v) <= Number(p)){
-           answer++
-        }
-    })
 
     
     return answer;
 }
+
